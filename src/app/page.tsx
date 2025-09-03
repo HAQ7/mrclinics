@@ -1,6 +1,8 @@
 import {useTranslations} from 'next-intl';
+import { Header } from './sections/header';
  
 export default function HomePage() {
-  const t = useTranslations('HomePage');
-  return <h1>{t('title')}</h1>;
+  return <main>
+    <Header />
+  </main>;
 }
