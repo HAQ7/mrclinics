@@ -1,92 +1,84 @@
 "use client";
+
 import {
   Navbar,
   NavBody,
   NavItems,
   MobileNav,
-  NavbarLogo,
-  NavbarButton,
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
+import Image from "next/image";
+import logo from "@/assets/logo.svg";
+import { useTranslations } from "next-intl";
+import LangButton from "@/components/lang-button";
 
 export function Header() {
+  const t = useTranslations("header");
   const navItems = [
     {
-      name: "Features",
-      link: "#features",
+      name: t("main"),
+      id: "main",
     },
     {
-      name: "Pricing",
-      link: "#pricing",
+      name: t("services"),
+      id: "services",
     },
     {
-      name: "Contact",
-      link: "#contact",
+      name: t("team"),
+      id: "team",
+    },
+    {
+      name: t("contact"),
+      id: "contact",
     },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="relative w-full">
-      <Navbar>
-        {/* Desktop Navigation */}
-        <NavBody>
-          <NavbarLogo />
-          <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Login</NavbarButton>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
-          </div>
-        </NavBody>
+    <Navbar>
+      {/* Desktop Navigation */}
+      <NavBody>
+        <Image width={50} height={50} src={logo} alt="logo" />
 
-        {/* Mobile Navigation */}
-        <MobileNav>
-          <MobileNavHeader>
-            <NavbarLogo />
-            <MobileNavToggle
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
-          </MobileNavHeader>
+        <NavItems items={navItems} />
+        <div className="flex items-center gap-4">
+          <LangButton />
+        </div>
+      </NavBody>
 
-          <MobileNavMenu
+      {/* Mobile Navigation */}
+      <MobileNav>
+        <MobileNavHeader>
+        <Image width={50} height={50} src={logo} alt="logo" />
+          <MobileNavToggle
             isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
-          >
-            {navItems.map((item, idx) => (
-              <a
-                key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
-              >
-                <span className="block">{item.name}</span>
-              </a>
-            ))}
-            <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Login
-              </NavbarButton>
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Book a call
-              </NavbarButton>
-            </div>
-          </MobileNavMenu>
-        </MobileNav>
-      </Navbar>
-      {/* Navbar */}
-    </div>
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          />
+        </MobileNavHeader>
+
+        <MobileNavMenu
+          isOpen={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
+        >
+          {navItems.map((item, idx) => (
+            <a
+              key={`mobile-link-${idx}`}
+              href={item.id}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="relative text-neutral-600 dark:text-neutral-300"
+            >
+              <span className="block">{item.name}</span>
+            </a>
+          ))}
+          <div className="flex w-full flex-col gap-4">
+            <LangButton />
+          </div>
+        </MobileNavMenu>
+      </MobileNav>
+    </Navbar>
   );
 }

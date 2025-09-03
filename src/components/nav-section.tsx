@@ -1,0 +1,95 @@
+"use client";
+
+import React, { createContext, useContext, useEffect, useRef } from "react";
+import { motion, useInView } from "motion/react";
+import { cn } from "@/lib/utils";
+
+// Context for managing active section
+interface NavSectionContextType {
+  activeSection: string | null;
+  setActiveSection: (sectionId: string | null) => void;
+}
+
+const NavSectionContext = createContext<NavSectionContextType | null>(null);
+
+// Hook to use the nav section context
+export const useNavSection = () => {
+  const context = useContext(NavSectionContext);
+  if (!context) {
+    throw new Error("useNavSection must be used within a NavSectionProvider");
+  }
+  return context;
+};
+
+// Provider component to wrap your app or sections
+interface NavSectionProviderProps {
+  children: React.ReactNode;
+}
+
+export const NavSectionProvider: React.FC<NavSectionProviderProps> = ({
+  children,
+}) => {
+  const [activeSection, setActiveSection] = React.useState<string | null>(null);
+
+  return (
+    <NavSectionContext.Provider value={{ activeSection, setActiveSection }}>
+      {children}
+    </NavSectionContext.Provider>
+  );
+};
+
+// Main NavSection component
+interface NavSectionProps {
+  children: React.ReactNode;
+  sectionId: string;
+  className?: string;
+  threshold?: number; // How much of the element should be visible to trigger (0-1)
+  margin?: string; // Root margin for intersection observer
+  onActiveChange?: (isActive: boolean) => void; // Optional callback for when section becomes active/inactive
+}
+
+export const NavSection: React.FC<NavSectionProps> = ({
+  children,
+  sectionId,
+  className,
+  threshold = 0.3,
+  margin = "0% 0px 0% 0px",
+  onActiveChange,
+}) => {
+  const ref = useRef<HTMLElement>(null);
+  const { activeSection, setActiveSection } = useNavSection();
+  console.log(
+    "Rendering NavSection:",
+    sectionId,
+    "Active Section:",
+    activeSection
+  );
+
+  const isInView = useInView(ref, {
+    amount: threshold, // 'amount' is the correct property name for Framer Motion
+    margin: margin as any, // Framer Motion margin type
+  });
+
+  useEffect(() => {
+    if (isInView) {
+      setActiveSection(sectionId);
+      onActiveChange?.(true);
+    }
+  }, [isInView, sectionId, setActiveSection, onActiveChange, activeSection]);
+
+  return (
+    <motion.section
+      ref={ref}
+      id={sectionId}
+      className={cn("w-full", className)}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.5,
+        ease: "easeOut",
+      }}
+    >
+      {children}
+    </motion.section>
+  );
+};

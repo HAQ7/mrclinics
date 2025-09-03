@@ -1,5 +1,13 @@
 {
-  "HomePage": {
-    "title": "welcome to Next.js!"
+  "header": {
+    "main": "Main",
+    "services": "Services",
+    "team": "Medical Team",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Here to take care of your smile and provide you with quality dental care",
+    "description": "Elite consultants and specialists in dentistry",
+    "button": "Contact Us"
   }
 }
