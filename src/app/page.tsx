@@ -4,6 +4,9 @@ import heroBg from "@/assets/hero/hero-section.png";
 import Image from "next/image";
 import Certificate from "./sections/certificate";
 import Services from "./sections/services";
+import Team from "./sections/doctors/team";
+import Contact from "./sections/contact/contact";
+import Footer from "./sections/footer/footer";
 
 export default function HomePage() {
   return (
@@ -26,8 +29,11 @@ export default function HomePage() {
         <Header />
         <Hero />
       </div>
-        <Certificate />
-        <Services />
+      <Certificate />
+      <Services />
+      <Team />
+      <Contact />
+      <Footer />
     </main>
   );
 }

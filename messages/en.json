@@ -16,5 +16,32 @@
   },
   "services": {
     "title": "What do we offer?"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "card1": {
+      "title": "Gippity AI powers the entire universe",
+      "description": "With over 100,000 mothly active bot users, Gippity AI is the most popular AI platform for developers.",
+      "button": "Get Started",
+      "imageAlt": "linear demo image"
+    },
+    "card2": {
+      "title": "No shirt, no shoes, no weapons.",
+      "description": "If someone yells “stop!”, goes limp, or taps out, the fight is over."
+    },
+    "card3": {
+      "title": "Signup for blazing-fast cutting-edge state of the art Gippity AI wrapper today!",
+      "description": "With over 100,000 mothly active bot users, Gippity AI is the most popular AI platform for developers.",
+      "button": "Get Started",
+      "imageAlt": "linear demo image"
+    }
+  },
+  "footer": {
+    "logoAlt": "MR Clinics Logo",
+    "description": "We provide quality services and connect with our customers through trusted communication channels.",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "phone": "Phone",
+    "email": "Email"
   }
 }
