@@ -8,7 +8,8 @@ import Services from "./sections/services";
 export default function HomePage() {
   return (
     <main className="max-w-7xl px-4 lg:px-8">
-      <div className="relative ">
+      <Header />
+      <div className="relative">
         <div className="absolute w-full h-full overflow-hidden">
           <div className="absolute bg-gradient-to-l right-0 from-white h-full w-10 z-20" />
           <div className="absolute bg-gradient-to-r left-0 from-white h-full w-10 z-20" />
@@ -23,11 +24,10 @@ export default function HomePage() {
           />
           <div className="absolute bg-gradient-to-t from-white h-30 w-full bottom-0" />
         </div>
-        <Header />
         <Hero />
       </div>
-        <Certificate />
-        <Services />
+      <Certificate />
+      <Services />
     </main>
   );
 }

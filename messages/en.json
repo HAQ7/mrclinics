@@ -15,6 +15,25 @@
     "description": "We are proud to have received the Saudi Center for Accreditation of Healthcare Institutions (CBAHI) accreditation certificate for applying quality and patient safety standards."
   },
   "services": {
-    "title": "What do we offer?"
+    "title": "What do we offer?",
+    "service1": {
+      "title": "Examination and Basic Treatments",
+      "listItem1": "Examination and Diagnosis",
+      "listItem2": "Cosmetic Fillings",
+      "listItem3": "Root Canal and Nerve Treatment",
+      "listItem4": "Gum Treatment and Surgery"
+    },
+    "service2": {
+      "title": "Dental Specialties and Surgery",
+      "listItem1": "Pediatric Dentistry",
+      "listItem2": "Orthodontics",
+      "listItem3": "Oral and Maxillofacial Surgery"
+    },
+    "service3": {
+      "title": "Prosthetics, Cosmetic Dentistry, and Dental Implants",
+      "listItem1": "Fixed and Removable Prosthetics",
+      "listItem2": "Cosmetic Porcelain Veneers",
+      "listItem3": "Dental Implants"
+    }
   }
 }

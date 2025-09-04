@@ -13,7 +13,7 @@ export default function Hero() {
   const isRTL = locale === "ar";
 
   return (
-    <NavSection className="lg:mt-32 mt-10 pb-32 z-30 relative " sectionId="main">
+    <NavSection className="lg:pt-32 pt-10 pb-32 z-30 relative " sectionId="main">
       <div className="relative z-20 flex items-center justify-center ">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
