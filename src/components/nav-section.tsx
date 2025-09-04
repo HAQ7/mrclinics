@@ -29,7 +29,7 @@ interface NavSectionProviderProps {
 export const NavSectionProvider: React.FC<NavSectionProviderProps> = ({
   children,
 }) => {
-  const [activeSection, setActiveSection] = React.useState<string | null>(null);
+  const [activeSection, setActiveSection] = React.useState<string | null>("main");
 
   return (
     <NavSectionContext.Provider value={{ activeSection, setActiveSection }}>
@@ -58,12 +58,7 @@ export const NavSection: React.FC<NavSectionProps> = ({
 }) => {
   const ref = useRef<HTMLElement>(null);
   const { activeSection, setActiveSection } = useNavSection();
-  console.log(
-    "Rendering NavSection:",
-    sectionId,
-    "Active Section:",
-    activeSection
-  );
+  
 
   const isInView = useInView(ref, {
     amount: threshold, // 'amount' is the correct property name for Framer Motion

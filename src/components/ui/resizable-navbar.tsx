@@ -104,7 +104,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         minWidth: "800px",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex",
+        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-2xl bg-transparent px-4 py-2 lg:flex",
         visible && "bg-white/80 ",
         className,
       )}
@@ -137,14 +137,14 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-gray-100"
+              className="absolute inset-0 h-full w-full rounded-2xl bg-gray-100"
             />
           )}
           <span className="relative z-20">{item.name}
             {activeSection === item.id && (
               <motion.div
                 layoutId="active"
-                className="absolute -bottom-1.5 h-1 w-full rounded-full bg-mrclinics-primary"
+                className="absolute -bottom-1.5 h-1 w-full rounded-2xl bg-mrclinics-primary"
               />
             )}
           </span>
@@ -165,7 +165,6 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         width: visible ? "90%" : "100%",
         paddingRight: visible ? "12px" : "0px",
         paddingLeft: visible ? "12px" : "0px",
-        borderRadius: visible ? "4px" : "2rem",
         y: visible ? 20 : 0,
       }}
       transition={{
@@ -174,7 +173,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         damping: 50,
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
+        "relative z-50 mx-auto flex w-full rounded-2xl max-w-[calc(100vw-2rem)] flex-col items-center  justify-between bg-transparent px-0 py-2 lg:hidden",
         visible && "bg-white/80",
         className,
       )}
@@ -214,7 +213,7 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-2xl bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
             className,
           )}
         >
@@ -258,7 +257,7 @@ export const NavbarButton = ({
   | React.ComponentPropsWithoutRef<"button">
 )) => {
   const baseStyles =
-    "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+    "px-4 py-2 rounded-2xl bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
   const variantStyles = {
     primary:

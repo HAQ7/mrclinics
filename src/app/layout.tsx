@@ -20,7 +20,7 @@ export default async function RootLayout({ children }: Props) {
 
   return (
     <html lang={locale} dir={isRTL ? "rtl" : "ltr"}>
-      <body>
+      <body className="grid place-items-center overflow-x-hidden">
         <NextIntlClientProvider messages={messages} locale={locale}>
           <NavSectionProvider>{children}</NavSectionProvider>
         </NextIntlClientProvider>

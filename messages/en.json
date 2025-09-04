@@ -6,8 +6,15 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Here to take care of your smile and provide you with quality dental care",
+    "title": "Quality dental care for your perfect smile",
     "description": "Elite consultants and specialists in dentistry",
     "button": "Contact Us"
+  },
+  "certificate": {
+    "title": "One of the leading dental centers in the Kingdom",
+    "description": "We are proud to have received the Saudi Center for Accreditation of Healthcare Institutions (CBAHI) accreditation certificate for applying quality and patient safety standards."
+  },
+  "services": {
+    "title": "What do we offer?"
   }
 }
