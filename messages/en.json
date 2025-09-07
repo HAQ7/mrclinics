@@ -42,20 +42,20 @@
   "contact": {
     "title": "Contact Us",
     "card1": {
-      "title": "Gippity AI powers the entire universe",
-      "description": "With over 100,000 mothly active bot users, Gippity AI is the most popular AI platform for developers.",
-      "button": "Get Started",
-      "imageAlt": "linear demo image"
+      "title": "Come Visit Us",
+      "description": "Riyadh - Al-Narjis District\nIntersection of Abu Bakr Al-Siddiq Road with Al-Thumama Road",
+      "button": "Location Link",
+      "imageAlt": "demo image"
     },
     "card2": {
-      "title": "No shirt, no shoes, no weapons.",
-      "description": "If someone yells “stop!”, goes limp, or taps out, the fight is over."
+      "title": "Official Working Hours",
+      "description": "Saturday to Wednesday: from 2:00 PM to 10:00 PM.\nThursday: from 2:00 PM to 8:00 PM."
     },
     "card3": {
-      "title": "Signup for blazing-fast cutting-edge state of the art Gippity AI wrapper today!",
-      "description": "With over 100,000 mothly active bot users, Gippity AI is the most popular AI platform for developers.",
-      "button": "Get Started",
-      "imageAlt": "linear demo image"
+      "title": "Contact us easily via WhatsApp",
+      "description": "Book your appointment or inquire via WhatsApp",
+      "button": "Start Conversation",
+      "imageAlt": "demo image"
     }
   },
   "footer": {

@@ -61,7 +61,7 @@ export default function Hero() {
                   delay: 0.8 
                 }}
               >
-                <a href="#contact" className="bg-mrclinics-primary hover:bg-mrclinics-primary/90 text-white font-semibold py-3 px-5 rounded-full text-md transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <a href="https://wa.me/+966548066121" className="bg-mrclinics-primary hover:bg-mrclinics-primary/90 text-white font-semibold py-3 px-5 rounded-full text-md transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                   {t("button")}
                 </a>
               </motion.div>
