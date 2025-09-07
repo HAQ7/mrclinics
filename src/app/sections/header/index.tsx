@@ -42,7 +42,7 @@ export function Header() {
     <Navbar>
       {/* Desktop Navigation */}
       <NavBody>
-        <Image width={50} height={50} src={logo} alt="logo" />
+        <Image width={50} height={50} src={logo} alt="logo" priority />
 
         <NavItems items={navItems} />
         <div className="flex items-center gap-4">
@@ -67,9 +67,9 @@ export function Header() {
           {navItems.map((item, idx) => (
             <a
               key={`mobile-link-${idx}`}
-              href={item.id}
+              href={`#${item.id}`}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="relative text-neutral-600 dark:text-neutral-300"
+              className="relative text-neutral-600"
             >
               <span className="block">{item.name}</span>
             </a>

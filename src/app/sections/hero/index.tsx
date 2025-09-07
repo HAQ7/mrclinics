@@ -22,14 +22,7 @@ export default function Hero() {
               className={`order-1 sm:order-${
                 isRTL ? "2" : "1"
               } text-center lg:text-start space-y-6 lg:space-y-8`}
-              initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ 
-                type: "spring", 
-                stiffness: 70, 
-                damping: 25, 
-                delay: 0.2 
-              }}
+              
             >
               <motion.h1
                 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-mrclinics-primary"
@@ -69,9 +62,9 @@ export default function Hero() {
                   delay: 0.8 
                 }}
               >
-                <button className="bg-mrclinics-primary hover:bg-mrclinics-primary/90 text-white font-semibold py-3 px-5 rounded-full text-md transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <a href="#contact" className="bg-mrclinics-primary hover:bg-mrclinics-primary/90 text-white font-semibold py-3 px-5 rounded-full text-md transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                   {t("button")}
-                </button>
+                </a>
               </motion.div>
             </motion.div>
 
@@ -80,8 +73,8 @@ export default function Hero() {
               className={`order-1 lg:order-${
                 isRTL ? "1" : "2"
               } flex justify-center lg:justify-end`}
-              initial={{ opacity: 0, x: isRTL ? -50 : 50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ 
                 type: "spring", 
                 stiffness: 70, 

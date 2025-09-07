@@ -3,6 +3,14 @@ import "./globals.css";
 import { Metadata } from "next";
 import { NavSectionProvider } from "@/components/nav-section";
 import { getLocale, getMessages } from "next-intl/server";
+import {Rubik} from "next/font/google";
+
+const rubik = Rubik({
+  subsets: ["latin"],
+  variable: "--font-rubik",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
 
 type Props = {
   children: React.ReactNode;
@@ -19,7 +27,7 @@ export default async function RootLayout({ children }: Props) {
   const isRTL = locale === "ar";
 
   return (
-    <html lang={locale} dir={isRTL ? "rtl" : "ltr"}>
+    <html lang={locale} dir={isRTL ? "rtl" : "ltr"} className={rubik.className}>
       <body className="grid place-items-center overflow-x-hidden">
         <NextIntlClientProvider messages={messages} locale={locale}>
           <NavSectionProvider>{children}</NavSectionProvider>

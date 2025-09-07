@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 type DoctorCardProps = {
-  image: string;
+  image: any;
   title: string;
   description: string;
 };
@@ -13,12 +13,13 @@ const DoctorCard: React.FC<DoctorCardProps> = ({
   description,
 }) => {
   return (
-    <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xs aspect-square rounded-2xl overflow-hidden shadow-md">
+    <>
       {/* Image */}
       <Image
         src={image}
         alt={title}
         fill
+        sizes="100%"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
@@ -30,7 +31,7 @@ const DoctorCard: React.FC<DoctorCardProps> = ({
         <h3 className="text-white text-lg font-semibold">{title}</h3>
         <p className="text-gray-200 text-sm">{description}</p>
       </div>
-    </div>
+    </>
   );
 };
 

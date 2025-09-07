@@ -21,9 +21,8 @@ export default function HomePage() {
           <Image
             src={heroBg}
             alt="Hero Background"
-            layout="fill"
-            objectFit="cover"
-            className="object-left"
+            fill
+            className="object-left bg-cover"
           />
           <div className="absolute bg-gradient-to-t from-white h-30 w-full bottom-0" />
         </div>
@@ -31,6 +30,9 @@ export default function HomePage() {
       </div>
       <Certificate />
       <Services />
+      <Team />
+      <Contact />
+      <Footer />
     </main>
   );
 }

@@ -36,6 +36,9 @@
       "listItem3": "Dental Implants"
     }
   },
+  "team": {
+    "title": "Medical Team"
+  },
   "contact": {
     "title": "Contact Us",
     "card1": {

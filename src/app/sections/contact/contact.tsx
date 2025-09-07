@@ -1,125 +1,177 @@
+"use client";
+
 import React from "react";
 import { WobbleCard } from "./wobble-card";
-import googleMap from "@/assets/google-map.svg";
+import googleMap from "@/assets/google-map.png";
 import iphone from "@/assets/iphone.svg";
 import effectSmall from "@/assets/effect-small.svg";
 import effectMedium from "@/assets/medium-effect.svg";
 import effectLarge from "@/assets/large-effect.svg";
 import Image from "next/image";
+import whatsaap from "@/assets/whatsaap.png";
 import { useLocale, useTranslations } from "next-intl";
+import { NavSection } from "@/components/nav-section";
+import { motion } from "motion/react";
 
 export default function Contact() {
   const t = useTranslations("contact");
   const locale = useLocale();
   const isRTL = locale === "ar";
+  const variants = {
+    visible: { y: 0, x: 0 },
+  };
 
   return (
-    <div className="px-4 py-8">
-      <div className="p-8 rounded-2xl">
-        <h2
-          className={`text-2xl font-bold text-white mb-8 ${
-            isRTL ? "text-right" : "text-left"
-          }`}
+    <NavSection sectionId="contact">
+      <h1 className="font-bold text-4xl leading-tight text-center">
+        {t("title")}
+      </h1>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full mt-10">
+        <WobbleCard
+          className="flex lg:flex-row flex-col justify-between !p-0"
+          containerClassName={`lg:col-span-2 bg-white shadow-lg`}
         >
-          {t("title")}
-        </h2>
-        <div
-          className="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full"
-          dir={isRTL ? "rtl" : "ltr"}
-        >
-          <WobbleCard
-            containerClassName={`col-span-1 lg:col-span-2 h-full bg-white min-h-[500px] lg:min-h-[300px] shadow-lg`}
-            className=""
+          <motion.div
+            dir={isRTL ? "rtl" : "ltr"}
+            className="grid place-items-center z-10"
+            whileInView={"visible"}
+            viewport={{ margin: "-20% 0px -20% 0px", once: true }}
           >
-            <div className="max-w-xs" dir={isRTL ? "rtl" : "ltr"}>
-              <h2
-                className={`${
-                  isRTL ? "text-right" : "text-left"
-                } text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-black`}
-              >
+            <motion.div
+              variants={variants}
+              initial={{ y: "100%" }}
+              dir={isRTL ? "rtl" : "ltr"}
+              transition={{ type: "spring", stiffness: 60, damping: 20 }}
+              className="flex flex-col p-10 gap-4"
+            >
+              <h2 className={`font-semibold text-black text-3xl`}>
                 {t("card1.title")}
               </h2>
-              <p
-                className={`my-4 ${
-                  isRTL ? "text-right" : "text-left"
-                } text-base/6 text-neutral-800`}
-              >
+              <p className={`text-mrclinics-secondary`}>
                 {t("card1.description")}
               </p>
-              <button className="bg-mrclinics-primary hover:bg-mrclinics-primary/90 text-white font-semibold py-3 px-5 rounded-full text-md transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl crusor-pointer">
+              <a href="https://maps.app.goo.gl/oKum5KTyZRCnK3Wv9"  className="bg-mrclinics-primary w-min text-nowrap hover:bg-mrclinics-primary/90 text-white font-semibold py-3 px-5 rounded-full text-md transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer">
                 {t("card1.button")}
-              </button>
-              <Image
-                src={googleMap}
-                width={300}
-                height={300}
-                alt={t("card1.imageAlt")}
-                className="absolute -right-4 lg:-right-[0%] -bottom-2 object-contain rounded-2xl"
-              />
-              <Image
-                src={effectMedium}
-                alt="effect"
-                className="absolute bottom-0 right-0 -z-50"
-              />
-            </div>{" "}
-          </WobbleCard>
-          <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-white shadow-lg">
-            <h2
-              className={`max-w-80 ${
-                isRTL ? "text-right" : "text-left"
-              } text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-black`}
-            >
-              {t("card2.title")}
-            </h2>
-            <p
-              className={`mt-4 max-w-[26rem] ${
-                isRTL ? "text-right" : "text-left"
-              } text-base/6 text-neutral-800`}
-            >
-              {t("card2.description")}
-            </p>
+              </a>
+            </motion.div>
+          </motion.div>
+          <motion.div
+            dir={isRTL ? "rtl" : "ltr"}
+            initial={{ x: "100%" }}
+            whileInView={{ x: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 60,
+              damping: 20,
+            }}
+            viewport={{ margin: "-20% 0px -20% 0px", once: true }}
+            className="flex lg:items-end items-start justify-start relative z-10"
+          >
             <Image
-              src={effectSmall}
-              alt="effect"
-              className="absolute left-0 bottom-0"
+              src={googleMap}
+              alt={t("card1.imageAlt")}
+              className="object-contain"
             />
-          </WobbleCard>
-          <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-white min-h-[500px] lg:min-h-[600px] xl:min-h-[300px] shadow-lg">
-            <div className="max-w-sm" dir={isRTL ? "rtl" : "ltr"}>
+          </motion.div>
+          <Image
+            src={effectMedium}
+            alt="effect"
+            className="absolute h-full bottom-0 right-0 opacity-50"
+          />
+        </WobbleCard>
+        <WobbleCard containerClassName="col-span-1 bg-white shadow-lg ">
+          <motion.div
+            viewport={{ margin: "-20% 0px -20% 0px", once: true }}
+            whileInView={"visible"}
+            className="w-full h-full"
+          >
+            <motion.div
+              initial={{ x: "-120%" }}
+              variants={variants}
+              transition={{
+                type: "spring",
+                stiffness: 60,
+                damping: 20,
+              }}
+              className="relative z-10 w-full h-full flex flex-col gap-4"
+            >
               <h2
-                className={`max-w-sm md:max-w-lg ${
-                  isRTL ? "text-right" : "text-left"
-                } text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-black`}
+                dir={isRTL ? "rtl" : "ltr"}
+                className={`font-bold text-3xl text-black`}
               >
-                {t("card3.title")}
+                {t("card2.title")}
               </h2>
               <p
-                className={`my-4 max-w-[26rem] ${
-                  isRTL ? "text-right" : "text-left"
-                } text-base/6 text-neutral-800`}
+                dir={isRTL ? "rtl" : "ltr"}
+                className={`text-mrclinics-secondary`}
               >
+                {t("card2.description")}
+              </p>
+            </motion.div>
+          </motion.div>
+          <Image
+            src={effectSmall}
+            alt="effect"
+            className="absolute left-0 bottom-0 opacity-50"
+          />
+        </WobbleCard>
+        <WobbleCard
+          className="p-0"
+          containerClassName="bg-white shadow-lg w-full lg:col-span-3"
+        >
+          <motion.div
+            whileInView={"visible"}
+            viewport={{ margin: "-20% 0px -20% 0px", once: true }}
+            className="grid grid-cols-1 lg:grid-cols-2"
+          >
+            <motion.div
+              initial={{ y: "-120%" }}
+              variants={variants}
+              transition={{
+                type: "spring",
+                stiffness: 60,
+                damping: 20,
+              }}
+              dir={isRTL ? "rtl" : "ltr"}
+              className="p-10 flex flex-col gap-4 justify-center"
+            >
+              <h2 className={`text-3xl font-bold text-black`}>
+                {t("card3.title")}
+              </h2>
+              <p className={`text-mrclinics-secondary`}>
                 {t("card3.description")}
               </p>
-              <button className="bg-mrclinics-primary hover:bg-mrclinics-primary/90 text-white font-semibold py-3 px-5 rounded-full text-md transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl crusor-pointer">
+              <a href="https://wa.me/+966548066121" className="bg-mrclinics-primary w-min text-nowrap hover:bg-mrclinics-primary/90 text-white font-semibold py-3 px-5 rounded-full text-md transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer">
                 {t("card3.button")}
-              </button>
-            </div>
-            <Image
-              src={iphone}
-              width={300}
-              height={300}
-              alt={t("card3.imageAlt")}
-              className="absolute -right-10 md:-right-[20%] lg:right-[20%] top-10 object-contain rounded-2xl"
-            />
+              </a>
+            </motion.div>
+            <motion.div
+              initial={{ y: "120%" }}
+              variants={variants}
+              transition={{
+                type: "spring",
+                stiffness: 60,
+                damping: 20,
+              }}
+              className="min-h-[300px] h-full grid place-items-center relative"
+            >
+              <Image
+                src={whatsaap}
+                width={300}
+                height={300}
+                alt={t("card3.imageAlt")}
+                className="object-contain rounded-2xl z-10 absolute top-12"
+              />
 
-            <Image
-              src={effectLarge}
-              alt="effect"
-              className="absolute bottom-0 right-20 -z-50"
-            />
-          </WobbleCard>
-        </div>
+              <Image
+                src={effectLarge}
+                alt="effect"
+                className="absolute bottom-0"
+              />
+            </motion.div>
+          </motion.div>
+        </WobbleCard>
       </div>
-    </div>
+    </NavSection>
   );
 }
