@@ -1,7 +1,6 @@
 "use client";
 
 import { NavSection } from "@/components/nav-section";
-import heroBg from "@/assets/hero/hero-section.png";
 import Image from "next/image";
 import clinicImage from "@/assets/hero/clinic.png";
 import { motion } from "motion/react";

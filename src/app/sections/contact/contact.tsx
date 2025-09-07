@@ -3,7 +3,6 @@
 import React from "react";
 import { WobbleCard } from "./wobble-card";
 import googleMap from "@/assets/google-map.png";
-import iphone from "@/assets/iphone.svg";
 import effectSmall from "@/assets/effect-small.svg";
 import effectMedium from "@/assets/medium-effect.svg";
 import effectLarge from "@/assets/large-effect.svg";

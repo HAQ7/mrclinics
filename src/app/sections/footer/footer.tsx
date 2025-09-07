@@ -1,13 +1,10 @@
-import { Instagram, Phone, Mail, MessageCircle } from "lucide-react";
+import { Instagram, Phone, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import logo from "@/assets/logo-white.svg";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
   const t = useTranslations("footer");
-  const locale = useLocale();
-  const isRTL = locale === "ar";
-
   return (
     <footer className="bg-mrclinics-primary p-10 rounded-2xl mt-32 mb-10">
       <div className={`flex flex-col gap-6 items-center `}>

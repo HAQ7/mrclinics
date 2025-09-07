@@ -53,7 +53,6 @@ export const NavSection: React.FC<NavSectionProps> = ({
   sectionId,
   className,
   threshold = 0.3,
-  margin = "0% 0px 0% 0px",
   onActiveChange,
 }) => {
   const ref = useRef<HTMLElement>(null);
@@ -62,7 +61,7 @@ export const NavSection: React.FC<NavSectionProps> = ({
 
   const isInView = useInView(ref, {
     amount: threshold, // 'amount' is the correct property name for Framer Motion
-    margin: margin as any, // Framer Motion margin type
+    margin: "0px 0px 0px 0px",
   });
 
   useEffect(() => {
