@@ -27,7 +27,7 @@ export default function Contact() {
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full mt-10">
         <WobbleCard
-          className="flex lg:flex-row flex-col justify-between !p-0"
+          className="flex md:flex-row flex-col justify-between !p-0"
           containerClassName={`lg:col-span-2 bg-white shadow-lg`}
         >
           <motion.div
@@ -64,12 +64,12 @@ export default function Contact() {
               damping: 20,
             }}
             viewport={{ margin: "-20% 0px -20% 0px", once: true }}
-            className="flex lg:items-end items-start justify-start relative z-10"
+            className="flex lg:items-end items-start ltr:justify-end rtl:justify-start relative z-10"
           >
             <Image
               src={googleMap}
               alt={t("card1.imageAlt")}
-              className="object-contain"
+              className="max-w-[400px]"
             />
           </motion.div>
           <Image
@@ -121,7 +121,7 @@ export default function Contact() {
           <motion.div
             whileInView={"visible"}
             viewport={{ margin: "-20% 0px -20% 0px", once: true }}
-            className="grid grid-cols-1 lg:grid-cols-2"
+            className="grid grid-cols-1 md:grid-cols-2"
           >
             <motion.div
               initial={{ y: "-120%" }}
