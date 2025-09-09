@@ -26,23 +26,17 @@ export default function Certificate() {
     >
       <Image
         src={whiteGlow}
-        className="absolute top-0 right-0 lg:w-1/2 w-full h-1/2"
+        className="absolute top-0 rtl:right-0 ltr:left-0 ltr:-scale-x-100  lg:w-1/2 w-full h-1/2"
         alt="white glow"
       />
-      <motion.div
-        initial={{ y: -200 }}
-        variants={variants}
-        transition={{
-          type: "spring",
-          stiffness: 70,
-          damping: 25,
-        }}
+      <div
+        
         className="z-10"
       >
         <Image src={cbahiImage} width={300} alt="CBAHI Certificate" />
-      </motion.div>
+      </div>
       <motion.div
-        initial={{ y: 200 }}
+        initial={{ y: "120%" }}
         variants={variants}
         transition={{
           type: "spring",

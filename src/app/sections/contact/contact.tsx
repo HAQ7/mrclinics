@@ -54,24 +54,17 @@ export default function Contact() {
               </a>
             </motion.div>
           </motion.div>
-          <motion.div
+          <div
             dir={isRTL ? "rtl" : "ltr"}
-            initial={{ x: "100%" }}
-            whileInView={{ x: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 60,
-              damping: 20,
-            }}
-            viewport={{ margin: "-20% 0px -20% 0px", once: true }}
             className="flex lg:items-end items-start ltr:justify-end rtl:justify-start relative z-10"
           >
             <Image
+            priority
               src={googleMap}
               alt={t("card1.imageAlt")}
               className="max-w-[400px]"
             />
-          </motion.div>
+          </div>
           <Image
             src={effectMedium}
             alt="effect"
@@ -144,17 +137,12 @@ export default function Contact() {
                 {t("card3.button")}
               </a>
             </motion.div>
-            <motion.div
-              initial={{ y: "120%" }}
-              variants={variants}
-              transition={{
-                type: "spring",
-                stiffness: 60,
-                damping: 20,
-              }}
+            <div
+             
               className="min-h-[300px] h-full grid place-items-center relative"
             >
               <Image
+                priority
                 src={whatsaap}
                 width={300}
                 height={300}
@@ -167,7 +155,7 @@ export default function Contact() {
                 alt="effect"
                 className="absolute bottom-0"
               />
-            </motion.div>
+            </div>
           </motion.div>
         </WobbleCard>
       </div>
